@@ -1,20 +1,13 @@
-function NavigationBar() {
-  //  function HandleCollapse() {
-  //    let Collapsed = true;
-  //
-  //    if (Collapsed === true) {
-  //      return "collapse navbar-collapse";
-  //    } else {
-  //      return "navbar-collapse";
-  //    }
-  //  }
-
+function NavigationBar(LogoDaEmpresa: string) {
+  // Preferiria Diminuir mas não consegui no mento
+  // LogoDaEmpresa para adcionar como parametro e ter como mudar no App.tsx
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
+        {/* Display do logo da impresa */}
         <a className="navbar-brand" href="#">
           <img
-            src="./icons/3135715.png"
+            src={LogoDaEmpresa}
             alt="logo"
             width="30"
             height="30"
@@ -22,6 +15,7 @@ function NavigationBar() {
           ></img>
           RandomGuy
         </a>
+        {/* Supostamente é para usar como colapso no celular mas tive problema em implementação */}
         <button
           className="navbar-toggler"
           type="button"
@@ -33,29 +27,37 @@ function NavigationBar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        {/* Botões Início, Sobre Nós, e Parceiros, ainda sem funcionalidade */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">
-                Home
+                Início
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Features
+                Sobre nós
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Pricing
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
+                Parceiros
               </a>
             </li>
           </ul>
+          {/* Consultar CPF no NavBar */}
+          <form className="d-flex ms-auto" role="search">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="XXX.XXX.XXX-XX"
+              aria-label="Search"
+            ></input>
+            <button className="btn btn-outline-success" type="submit">
+              Consultar CPF
+            </button>
+          </form>
         </div>
       </div>
     </nav>
