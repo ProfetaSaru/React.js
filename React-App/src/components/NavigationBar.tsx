@@ -1,3 +1,5 @@
+import GenerateButton from "./GenericButton";
+
 function NavigationBar(LogoDaEmpresa: string) {
   // Preferiria Diminuir mas não consegui no mento
   // LogoDaEmpresa para adcionar como parametro e ter como mudar no App.tsx
@@ -30,21 +32,9 @@ function NavigationBar(LogoDaEmpresa: string) {
         {/* Botões Início, Sobre Nós, e Parceiros, ainda sem funcionalidade */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Início
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Sobre nós
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Parceiros
-              </a>
-            </li>
+            {GenerateButton('Inicio', true)}
+            {GenerateButton('Sobre nós', false)}
+            {GenerateButton('Parcerias', false,)}
           </ul>
           {/* Consultar CPF no NavBar */}
           <form className="d-flex ms-auto" role="search">

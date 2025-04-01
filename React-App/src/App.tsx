@@ -12,16 +12,16 @@ function App() {
       {/* Corpo do Site com o consultar CPF e Logo Grande */}
       <div className="container text-center">
         <div className="row p-5 align-items-start">
-          <div className="col">
+          <div className="col">d
             <>
               {GenerateCard(
                 true, // Mostrar o corpo
-                "", // Vazio para não mostrar uma imagem
-                "Consultar CPF?", // Titulo no topo do cartão
+                '', // Vazio para não mostrar uma imagem
+                'Consultar CPF?', // Titulo no topo do cartão
                 // Descrição do cartão
-                "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus odit minima inventore sit omnis ratione aliquam delectus hic officiis distinctio!",
-                "XXX.XXX.XXX-XX", // Mostra aonde escrever o CPF
-                "Consultar CPF" // Escrita no botão
+                'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus odit minima inventore sit omnis ratione aliquam delectus hic officiis distinctio!',
+                'XXX.XXX.XXX-XX', // Mostra aonde escrever o CPF
+                'Consultar CPF' // Escrita no botão
               )}
             </>
           </div>
