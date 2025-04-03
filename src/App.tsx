@@ -13,15 +13,7 @@ function App() {
       <div className="container text-center">
         <div className="row p-5 align-items-start">
           <div className="col">
-              {GenerateCard(
-                true, // Mostrar o corpo
-                '', // Vazio para não mostrar uma imagem
-                'Consultar CPF?', // Titulo no topo do cartão
-                // Descrição do cartão
-                'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus odit minima inventore sit omnis ratione aliquam delectus hic officiis distinctio!',
-                'XXX.XXX.XXX-XX', // Mostra aonde escrever o CPF
-                'Consultar CPF' // Escrita no botão
-              )}
+              {GenerateCard(true, '', 'Consultar CPF?', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nesciunt exercitationem dolores odio illo veritatis ut vitae necessitatibus, asperiores soluta.', 'XXX.XXX.XXX-XX', 'Consultar CPF')}
           </div>
           <div className="col"></div>
           <div className="col">
