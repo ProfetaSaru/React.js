@@ -12,8 +12,7 @@ function App() {
       {/* Corpo do Site com o consultar CPF e Logo Grande */}
       <div className="container text-center">
         <div className="row p-5 align-items-start">
-          <div className="col">d
-            <>
+          <div className="col">
               {GenerateCard(
                 true, // Mostrar o corpo
                 '', // Vazio para não mostrar uma imagem
@@ -23,10 +22,10 @@ function App() {
                 'XXX.XXX.XXX-XX', // Mostra aonde escrever o CPF
                 'Consultar CPF' // Escrita no botão
               )}
-            </>
           </div>
+          <div className="col"></div>
           <div className="col">
-            <>{GenerateCard(false, Logo)}</>
+            {GenerateCard(false, Logo)}
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ function NavigationBar(LogoDaEmpresa: string) {
   // Preferiria Diminuir mas não consegui no mento
   // LogoDaEmpresa para adcionar como parametro e ter como mudar no App.tsx
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div className="container-fluid">
         {/* Display do logo da impresa */}
         <a className="navbar-brand" href="#">
@@ -32,8 +32,8 @@ function NavigationBar(LogoDaEmpresa: string) {
         {/* Botões Início, Sobre Nós, e Parceiros, ainda sem funcionalidade */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            {GenerateButton('Inicio', true)}
-            {GenerateButton('Sobre nós', false)}
+            {GenerateButton('Inicio', true, '/')}
+            {GenerateButton('Sobre nós', false, '/sobre')}
             {GenerateButton('Parcerias', false,)}
           </ul>
           {/* Consultar CPF no NavBar */}
