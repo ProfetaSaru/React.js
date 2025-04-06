@@ -10,10 +10,10 @@ function GenerateCard(
   Placeholder?: string, // Texto na caixa de CPF
   // Submit?: string, // Para aonde o botão redirecionará
   Button?: string, // Texto do Botão
-  InitialData?: string,
+  InitialData?: string
 ) /* Retorna O html responsivo */ {
-  const [formData, setFormData] = useState({ 
-    CPF: InitialData || "" // Initialize with provided value or empty string
+  const [formData, setFormData] = useState({
+    CPF: InitialData || "", // Initialize with provided value or empty string
   });
   const navigate = useNavigate();
 
@@ -22,7 +22,6 @@ function GenerateCard(
     navigate("/criar-conta", { state: formData });
   };
 
-
   return (
     <div className="card align-self-center" style={{ width: "19rem" }}>
       <img src={Image}></img>
@@ -30,7 +29,11 @@ function GenerateCard(
         <div className="card-body">
           <h5 className="card-title">{Title}</h5>
           <p className="card-text">{Text}</p>
-          <form className="d-flex ms-auto" onSubmit={handleSubmit} role="search">
+          <form
+            className="d-flex ms-auto"
+            onSubmit={handleSubmit}
+            role="search"
+          >
             <input
               className="form-control me-2"
               type="search"

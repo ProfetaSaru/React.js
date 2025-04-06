@@ -10,8 +10,7 @@ function Sobre() {
       {NavigationBar(Logo)}
       {/* Corpo do Site com o consultar CPF e Logo Grande */}
       <div className="container text-center">
-        <div className="row p-5 align-items-start">  
-        </div>
+        <div className="row p-5 align-items-start"></div>
       </div>
       {/* Footer com as informações da empresa */}
       <Footer />

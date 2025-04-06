@@ -32,9 +32,9 @@ function NavigationBar(LogoDaEmpresa: string) {
         {/* Botões Início, Sobre Nós, e Parceiros, ainda sem funcionalidade */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            {GenerateButton('Inicio', true, '/')}
-            {GenerateButton('Sobre nós', false, '/sobre')}
-            {GenerateButton('Parcerias', false,)}
+            {GenerateButton("Inicio", true, "/")}
+            {GenerateButton("Sobre nós", false, "/sobre")}
+            {GenerateButton("Parcerias", false)}
           </ul>
           {/* Consultar CPF no NavBar */}
           <form className="d-flex ms-auto" role="search">
