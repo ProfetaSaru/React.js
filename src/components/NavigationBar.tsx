@@ -1,7 +1,7 @@
 import GenerateButton from "./GenericButton";
 
-function NavigationBar(LogoDaEmpresa: string) {
-  // Preferiria Diminuir mas não consegui no mento
+function NavigationBar(LogoDaEmpresa: string, logado: boolean) {
+  // Preferiria Diminuir mas não consegui no momento
   // LogoDaEmpresa para adcionar como parametro e ter como mudar no App.tsx
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
@@ -37,7 +37,7 @@ function NavigationBar(LogoDaEmpresa: string) {
             {GenerateButton("Parcerias", false)}
           </ul>
           {/* Consultar CPF no NavBar */}
-          <form className="d-flex ms-auto" role="search">
+          {logado === true ? <form className="d-flex ms-auto" role="search">
             <input
               className="form-control me-2"
               type="search"
@@ -48,6 +48,7 @@ function NavigationBar(LogoDaEmpresa: string) {
               Consultar CPF
             </button>
           </form>
+          : <button className="btn btn-outline-success d-flex ms-auto">Sua Conta</button>}
         </div>
       </div>
     </nav>
