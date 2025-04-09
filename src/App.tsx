@@ -1,6 +1,6 @@
-import GenerateCard from "./components/GenericCard";
-import NavigationBar from "./components/NavigationBar";
-import Footer from "./components/Footer";
+import GenerateCard from "./components/GeradorCard.tsx";
+import NavigationBar from "./components/NavigationBar.tsx";
+import Footer from "./components/Footer.tsx";
 
 function App() {
   const Logo = "./icons/3135715.png"; /* Pode mudar o logo da empresa */
