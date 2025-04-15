@@ -1,7 +1,7 @@
 //Gerado por AI, refatorização possivel no futuro
 function Footer() {
   return (
-    <footer className="bg-dark text-white py-4">
+    <footer className="bg-dark text-white text-center py-4">
       <div className="container">
         <div className="row">
           <div className="col-12">

@@ -37,7 +37,7 @@ function NavigationBar(LogoDaEmpresa: string, logado: boolean) {
             {GenerateButton("Parcerias", false)}
           </ul>
           {/* Consultar CPF no NavBar */}
-          {logado === true ? (
+          {logado === false ? (
             <form className="d-flex ms-auto" role="search">
               <input
                 className="form-control me-2"

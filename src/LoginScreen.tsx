@@ -7,16 +7,15 @@ function PaginaLogin() {
   const Logo = "./icons/3135715.png"; /* Pode mudar o logo da empresa */
 
   return (
-    <>
-      <div className="container text-center">
+    <div className="text-center">
+      <div className="container">
         {NavigationBar(Logo, true)}
         <div className="row p-5 align-items-center">
           <div className="col">{LogarContaCard()}</div>
-          <div className="col">{GenerateCard(false, Logo)}</div>
         </div>
       </div>
       {Footer()}
-    </>
+    </div>
   );
 }
 

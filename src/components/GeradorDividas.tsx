@@ -1,17 +1,26 @@
 import DebtCard from "./CardDivida";
 
-function GeradorDividas(Logo : string, Quantidade : number, Valor : number) {
-    const dividas: any[] = []
+// Interface para definir a estrutura dos dados de dívida
+interface Divida {
+  id?: number;
+  empresa: string;
+  logo: string;
+  valor: number;
+  data_vencimento?: string;
+  status?: string;
+}
 
-    for (let index = 0; index < Quantidade; index++) {
-      dividas.push(
-        <div key={index}>
-          {DebtCard(Logo, Valor)}
-        </div>
-      );
-    }
-
-    return dividas;
+/**
+ * Gera cartões de dívida a partir de um array de dados de dívidas
+ * @param dividas - Array de objetos contendo dados das dívidas
+ * @returns Array de componentes DebtCard
+ */
+function GeradorDividas(dividas: Divida[]) {
+  return dividas.map((divida, index) => (
+    <div key={index}>
+      {DebtCard(divida.logo, divida.valor, divida.empresa, divida.data_vencimento, divida.status)}
+    </div>
+  ));
 }
 
 export default GeradorDividas;

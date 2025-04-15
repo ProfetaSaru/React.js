@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="text-center">
       {/* Implementação do NavBar no site principal */}
-      {NavigationBar(Logo, true)}
+      {NavigationBar(Logo, false)}
       {/* Corpo do Site com o consultar CPF e Logo Grande */}
       <div className="container text-center">
         <div className="row p-5 align-items-start">

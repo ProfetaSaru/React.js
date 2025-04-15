@@ -1,15 +1,39 @@
-function DebtCard(logo: string, divida: number) {
+// Componente CardDivida.tsx
+import React from "react";
+
+function DebtCard(
+  logo: string,
+  valor: number,
+  empresa: string = "Empresa",
+  dataVencimento?: string,
+  status?: string
+) {
+  const HNW = 52;
+
   return (
-    <div className="card text-bg-primary mb-3" style={{ width: "19rem" }}>
-      <div className="card-header">
-        <div className="text-start">
-          <img src={logo} width={52} height={52} alt="..." />
-        </div>
-        <div className="text-end">{`R$ ${divida}`}</div>
-      </div>
+    <div className="card" style={{ width: "19rem" }}>
       <div className="card-body">
-        <button>negociar</button>
-        <button>detalhes</button>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            <img
+              src={logo}
+              alt={`Logo ${empresa}`}
+              style={{ height: HNW, width: "auto" }}
+            />
+            <h3>{empresa}</h3>
+          </li>
+          <li className="list-group-item">
+            <p className="debt-value">R$ {valor.toFixed(2)}</p>
+            {dataVencimento && (
+              <p className="due-date">Vencimento: {dataVencimento}</p>
+            )}
+            {status && (
+              <p className={`status ${status.toLowerCase()}`}>
+                Status: {status}
+              </p>
+            )}
+          </li>
+        </ul>
       </div>
     </div>
   );

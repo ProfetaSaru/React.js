@@ -3,7 +3,6 @@ import GeradorDividas from "./GeradorDividas";
 
 function dividaCorpo(Nome: string, Dividas: boolean) {
   const Logo = "./icons/3135715.png";
-  let Valor;
 
   return (
     <>
@@ -13,11 +12,9 @@ function dividaCorpo(Nome: string, Dividas: boolean) {
           {`Olá ${Nome}, ${
             Dividas === true ? "Você tem dividas" : "Você não tem dividas"
           }`}
-          {GeradorDividas(Logo, 3, 1000)}`
         </div>
       </div>
     </div>
-    {Footer()}
     </>
   );
 }

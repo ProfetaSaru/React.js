@@ -3,16 +3,27 @@ import NavigationBar from "./components/NavigationBar";
 function DetalhesDivida() {
   const CPF = "XXX.XXX.XXX-XX";
   const Logo = "./icons/3135715.png";
-  const HNW = 52;
 
   return (
     <div className="container text-center">
       {NavigationBar(Logo, false)}
       <div className="text-start">Detalhes do Contrato</div>
-      <div className="card">
-        <div className="card-body row">
-          <img src={Logo} height={HNW} width={HNW} alt="Logo" />
-          <div> CPF: {CPF}</div>
+      <div className="card mb-3">
+        <div className="row g-0">
+          <div className="col-md-4">
+            <img
+              className="align-self-center"
+              src={Logo}
+              height={52}
+              width="auto"
+              alt="Logo"
+            />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title"> CPF: {CPF}</h5>
+            </div>
+          </div>
         </div>
       </div>
       <div className="col align-items-center">

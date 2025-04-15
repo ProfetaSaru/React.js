@@ -1,7 +1,13 @@
-import CreateAccount from "./components/CriarConta.tsx";
+import CreateAccount from "./components/CriadorConta.tsx";
 
 function CreateAccountPage() {
-  return <div className="container text-center">{CreateAccount()}</div>;
+  //const Logo = "./icons/3135715.png";
+
+  return  (
+    <>
+    {CreateAccount()}
+    </>
+  );
 }
 
 export default CreateAccountPage;
