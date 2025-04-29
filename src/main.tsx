@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import App from "./paginaInicial.tsx";
 import "bootstrap/dist/css/bootstrap.css";
+import "./assets/css/teste.css"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PaginaCriarConta from "./paginaCriarConta.tsx";
 import PaginaLogin from "./paginaLogin.tsx";
