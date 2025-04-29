@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import GeradorDividas from './components/GeradorDividas';
-import NavigationBar from './components/NavigationBar';
+import NavigationBar from './components/BarraNavegação';
 
 interface Divida {
   id: number;
@@ -11,7 +11,7 @@ interface Divida {
   status: string;
 }
 
-function MinhasDividas() {
+function PaginaDividas() {
   const Logo = "./icons/3135715.png";
   const minhasDividas = [
     {
@@ -113,4 +113,4 @@ function MinhasDividas() {
   //);
 }
 
-export default MinhasDividas;
+export default PaginaDividas;

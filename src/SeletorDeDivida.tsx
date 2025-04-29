@@ -1,6 +1,6 @@
 import dividaCorpo from "./components/DividaCorpo";
 import Footer from "./components/Footer";
-import NavigationBar from "./components/NavigationBar";
+import NavigationBar from "./components/BarraNavegação";
 
 function PaginaDividas() {
   const logo = "./icons/3135715.png";

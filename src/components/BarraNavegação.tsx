@@ -1,4 +1,4 @@
-import GenerateButton from "./GeradorButton.tsx";
+import GenerateButton from "./GeradorBotão.tsx";
 
 function NavigationBar(LogoDaEmpresa: string, logado: boolean) {
   // Preferiria Diminuir mas não consegui no momento

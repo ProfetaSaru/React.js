@@ -1,7 +1,7 @@
 import Footer from "./components/Footer";
-import GenerateCard from "./components/GeradorCard";
-import LogarContaCard from "./components/LogarConta";
-import NavigationBar from "./components/NavigationBar";
+import GenerateCard from "./components/GeradorCartao";
+import LogarContaCard from "./components/CartaoLogarConta";
+import NavigationBar from "./components/BarraNavegação";
 
 function PaginaLogin() {
   const Logo = "./icons/3135715.png"; /* Pode mudar o logo da empresa */

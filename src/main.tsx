@@ -1,13 +1,13 @@
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+import App from "./paginaInicial.tsx";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sobre from "./Teste.tsx";
-import CreateAccountPage from "./CriarConta.tsx";
+import Sobre from "./paginaTestes01.tsx";
+import CreateAccountPage from "./paginaCriarConta.tsx";
 import PaginaDividas from "./SeletorDeDivida.tsx";
-import PaginaLogin from "./LoginScreen.tsx";
+import PaginaLogin from "./paginaLogin.tsx";
 import DetalhesDivida from "./PaginaDeDivida.tsx";
-import MinhasDividas from "./MinhasDividas.tsx";
+import MinhasDividas from "./paginaDividas.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>

@@ -1,8 +1,8 @@
-import GenerateCard from "./components/GeradorCard.tsx";
-import NavigationBar from "./components/NavigationBar.tsx";
+import GenerateCard from "./components/GeradorCartao.tsx";
+import NavigationBar from "./components/BarraNavegação.tsx";
 import Footer from "./components/Footer.tsx";
 
-function App() {
+function paginaInicial() {
   const Logo = "./icons/3135715.png"; /* Pode mudar o logo da empresa */
 
   return (
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default paginaInicial;

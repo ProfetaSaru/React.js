@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function LogarContaCard() {
+function LogarConta() {
   const Logo = "./icons/3135715.png";
   const HNW = 52;
   
@@ -140,4 +140,4 @@ function LogarContaCard() {
   return isPasswordView ? PasswordGetter : CPFGetter;
 }
 
-export default LogarContaCard;
+export default LogarConta;

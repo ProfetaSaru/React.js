@@ -1,4 +1,4 @@
-function teste() {
+function paginaTestes() {
   //const Logo = "./icons/3135715.png";
 
   return (
@@ -6,4 +6,4 @@ function teste() {
   );
 }
 
-export default teste;
+export default paginaTestes;

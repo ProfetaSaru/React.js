@@ -1,6 +1,6 @@
-import NavigationBar from "./components/NavigationBar";
+import NavigationBar from "./components/BarraNavegação";
 
-function DetalhesDivida() {
+function PaginaDeDivida() {
   const CPF = "XXX.XXX.XXX-XX";
   const Logo = "./icons/3135715.png";
 
@@ -38,4 +38,4 @@ function DetalhesDivida() {
   );
 }
 
-export default DetalhesDivida;
+export default PaginaDeDivida;

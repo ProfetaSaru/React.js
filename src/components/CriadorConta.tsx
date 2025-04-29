@@ -1,6 +1,6 @@
 import Footer from "./Footer";
 import InputGenerator from "./InputComponent";
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "./BarraNavegação";
 
 function CreateAccount() {
   const Logo = "./icons/3135715.png";

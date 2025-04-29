@@ -1,4 +1,4 @@
-import DebtCard from "./CardDivida";
+import DebtCard from "./CartãoDivida";
 
 // Interface para definir a estrutura dos dados de dívida
 interface Divida {
