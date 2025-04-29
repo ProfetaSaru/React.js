@@ -1,7 +1,7 @@
 // NextPage.tsx
 import { useLocation } from "react-router-dom";
 
-function NextPage() {
+function PaginaTeste00() {
   const location = useLocation();
   const formData = location.state || {}; // Add fallback
 
@@ -13,4 +13,4 @@ function NextPage() {
   );
 }
 
-export default NextPage;
+export default PaginaTeste00;

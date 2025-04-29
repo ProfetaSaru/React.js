@@ -1,6 +1,6 @@
 import CreateAccount from "./components/CriadorConta.tsx";
 
-function paginaCriarConta() {
+function PaginaCriarConta() {
   //const Logo = "./icons/3135715.png";
 
   return  (
@@ -10,4 +10,4 @@ function paginaCriarConta() {
   );
 }
 
-export default paginaCriarConta;
+export default PaginaCriarConta;
