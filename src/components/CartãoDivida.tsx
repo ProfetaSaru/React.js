@@ -1,7 +1,6 @@
 // Componente CardDivida.tsx
-import React from "react";
-
 function DebtCard(
+  // Exemplos de dados de divida
   logo: string,
   valor: number,
   empresa: string = "Empresa",

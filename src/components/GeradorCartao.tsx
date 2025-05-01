@@ -23,7 +23,10 @@ function GenerateCard(
   };
 
   return (
-    <div className="card align-self-center fade-in-up" style={{ width: "19rem" }}>
+    <div
+      className="card align-self-center fade-in-up"
+      style={{ width: "19rem" }}
+    >
       <img src={Image}></img>
       {DisplayBody === true && (
         <div className="card-body">

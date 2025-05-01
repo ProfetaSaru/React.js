@@ -1,6 +1,8 @@
 import DebtCard from "./CartãoDivida";
 
 // Interface para definir a estrutura dos dados de dívida
+// Mudar valores para os definidos no Banco de Dados
+// Mudar também CartãoDivida.tsx
 interface Divida {
   id?: number;
   empresa: string;
@@ -18,7 +20,13 @@ interface Divida {
 function GeradorDividas(dividas: Divida[]) {
   return dividas.map((divida, index) => (
     <div key={index}>
-      {DebtCard(divida.logo, divida.valor, divida.empresa, divida.data_vencimento, divida.status)}
+      {DebtCard(
+        divida.logo,
+        divida.valor,
+        divida.empresa,
+        divida.data_vencimento,
+        divida.status
+      )}
     </div>
   ));
 }
