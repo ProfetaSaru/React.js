@@ -1,4 +1,5 @@
 //Gerado por AI, refatorização possivel no futuro
+/* depois temos que melhorar essa página, criar um css só dela!!!*/
 function Footer() {
   return (
     <footer className="bg-dark text-white text-center py-4">

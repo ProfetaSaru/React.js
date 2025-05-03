@@ -6,7 +6,7 @@ function PaginaDeDivida() {
 
   return (
     <div className="container text-center">
-      {NavigationBar(Logo, false)}
+      <NavigationBar logoDaEmpresa={Logo} logado={false} />
       <div className="text-start">Detalhes do Contrato</div>
       <div className="card mb-3">
         <div className="row g-0">
