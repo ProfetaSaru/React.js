@@ -3,77 +3,88 @@ import { useState } from "react";
 function LogarConta() {
   const Logo = "./icons/3135715.png";
   const HNW = 52;
-  
-  // Use state to track which component to display
+
+  // useState pra definir qual componente mostrar
   const [isPasswordView, setIsPasswordView] = useState(false);
-  // State for CPF value
+  // Salvar Valor CPF
   const [cpfValue, setCpfValue] = useState("");
-  // Separate state for password
+  // Salvar Valor Senha
   const [passwordValue, setPasswordValue] = useState("");
-  
-  // CPF formatter function
+
+  // CPF Formatador
   const formatCPF = (value: string) => {
-    // Remove all non-digit characters
-    const cpfDigits = value.replace(/\D/g, '');
-    
-    // Limit to 11 digits (CPF length)
+    // Remove todos os characteres não numerais
+    const cpfDigits = value.replace(/\D/g, "");
+
+    // Limita characteres a 11
     const limitedCPF = cpfDigits.slice(0, 11);
-    
-    // Format the CPF with periods and hyphen
-    let formattedCPF = '';
+
+    // Formatador de CPF
+    let formattedCPF = "";
     if (limitedCPF.length > 0) {
-      formattedCPF = limitedCPF.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-      
-      // Handle partial input formats
+      formattedCPF = limitedCPF.replace(
+        /(\d{3})(\d{3})(\d{3})(\d{2})/,
+        "$1.$2.$3-$4"
+      );
+
+      // Lidar com formatos de entrada parciais
       if (limitedCPF.length <= 3) {
         formattedCPF = limitedCPF;
       } else if (limitedCPF.length <= 6) {
-        formattedCPF = limitedCPF.replace(/(\d{3})(\d{1,3})/, '$1.$2');
+        formattedCPF = limitedCPF.replace(/(\d{3})(\d{1,3})/, "$1.$2");
       } else if (limitedCPF.length <= 9) {
-        formattedCPF = limitedCPF.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3');
+        formattedCPF = limitedCPF.replace(
+          /(\d{3})(\d{3})(\d{1,3})/,
+          "$1.$2.$3"
+        );
       }
     }
-    
+
     return formattedCPF;
   };
-  
-  // Handle CPF input change
+
+  // Lidar com mudança de valor CPF
   const handleCPFChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const formattedValue = formatCPF(value);
     setCpfValue(formattedValue);
   };
-  
-  // Handle password input change
+
+  // Lidar com mudança de valor Password
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPasswordValue(e.target.value);
   };
-  
-  function handleCPFSubmit(e: { preventDefault: () => void; }) {
-    e.preventDefault(); // Prevent form submission
-    
-    // Validate CPF before proceeding (must have 11 digits)
-    const cpfDigits = cpfValue.replace(/\D/g, '');
+
+  function handleCPFSubmit(e: { preventDefault: () => void }) {
+    e.preventDefault(); // Impede recarregar a pagina normalmente
+
+    // Valida CPF antes de proceder (tem que ter todos os 11 digitos)
+    const cpfDigits = cpfValue.replace(/\D/g, "");
     if (cpfDigits.length === 11) {
       setIsPasswordView(true);
-      // Reset password field when switching to password view
+      // Reseta o valor do Password quando mudar para o componente de senha
       setPasswordValue("");
     } else {
       alert("Por favor, insira um CPF válido com 11 dígitos.");
     }
   }
-  
-  function handlePasswordSubmit(e: { preventDefault: () => void; }) {
-    e.preventDefault(); // Prevent form submission
-    // Handle login logic here
-    console.log("Login attempt with CPF:", cpfValue, "and password:", passwordValue);
+
+  function handlePasswordSubmit(e: { preventDefault: () => void }) {
+    e.preventDefault(); // Impéde envio de formulário
+    // Adicionar logica da api aqui
+    console.log(
+      "Login attempt with CPF:",
+      cpfValue,
+      "and password:",
+      passwordValue
+    );
   }
-  
+
   function goBackToCPF() {
     setIsPasswordView(false);
   }
 
-  // CPF input component
+  // Componente de input de CPF
   const CPFGetter = (
     <div className="card align-self-center" style={{ width: "19rem" }}>
       <div className="card-title text-start p-2">
@@ -89,54 +100,55 @@ function LogarConta() {
             value={cpfValue}
             onChange={handleCPFChange}
             maxLength={14} // Max length of formatted CPF (11 digits + 3 separators)
-            autoComplete="off" // Prevent autocomplete
+            autoComplete="off" // Impéde preenchimento automático
           />
-          <button 
-            className="btn btn-outline-success" 
+          <button
+            className="btn btn-outline-success"
             type="submit"
-            disabled={cpfValue.replace(/\D/g, '').length !== 11}
+            disabled={cpfValue.replace(/\D/g, "").length !== 11}
           >
             continuar
           </button>
         </form>
         <p className="card-text">Não tem conta conosco?</p>
-        <button className="btn btn-outline-success"><a href="/criar-conta">Cadastre-se!</a></button>
+        <button className="btn btn-outline-success">
+          <a href="/criar-conta">Cadastre-se!</a>
+        </button>
       </div>
     </div>
   );
 
-  // Display formatted CPF in the password view
+  // Mostra CPF formatado no componente de Senha
   const displayCPF = cpfValue || "CPF não fornecido";
 
-  // Password input component
+  // Componente de input de Password
   const PasswordGetter = (
     <div className="card align-self-center" style={{ width: "19rem" }}>
       <div className="card-title text-start p-2">
-        <button className="btn" onClick={goBackToCPF} type="button">voltar</button>
+        <button className="btn" onClick={goBackToCPF} type="button">
+          voltar
+        </button>
         <div>{displayCPF}</div>
       </div>
       <div className="card-body">
         <div className="text-start">Senha</div>
         <form onSubmit={handlePasswordSubmit} role="search">
-          <input 
-            className="form-control me-2" 
+          <input
+            className="form-control me-2"
             type="password"
             value={passwordValue}
             onChange={handlePasswordChange}
-            autoComplete="new-password" // Prevent password autofill
+            autoComplete="new-password" // Impéde preenchimento automático de senha
           />
-          <button 
-            className="btn btn-outline-success" 
-            type="submit"
-          >
+          <button className="btn btn-outline-success" type="submit">
             entrar
           </button>
         </form>
       </div>
     </div>
   );
-  
-  // Return the appropriate component based on state
+
+  // Retorna o componente apropriado de acordo com o state
   return isPasswordView ? PasswordGetter : CPFGetter;
 }
 

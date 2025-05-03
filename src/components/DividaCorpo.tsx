@@ -6,15 +6,15 @@ function dividaCorpo(Nome: string, Dividas: boolean) {
 
   return (
     <>
-    <div className="container row">
-      <div className="row items-center">
-        <div className="col">
-          {`Olá ${Nome}, ${
-            Dividas === true ? "Você tem dividas" : "Você não tem dividas"
-          }`}
+      <div className="container row">
+        <div className="row items-center">
+          <div className="col">
+            {`Olá ${Nome}, ${
+              Dividas === true ? "Você tem dividas" : "Você não tem dividas"
+            }`}
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
