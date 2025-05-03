@@ -1,6 +1,7 @@
 import GenerateCard from "./components/GeradorCartao.tsx";
 import NavigationBar from "./components/BarraNavegação.tsx";
 import Footer from "./components/Footer.tsx";
+import SobreNos from "./components/SobreNos.tsx";
 
 function PaginaInicial() {
   const logo = "./icons/LogoDesenrola.ai.jpg"; // Pode mudar o logo da empresa
@@ -27,7 +28,7 @@ function PaginaInicial() {
           <div className="col">{GenerateCard(false, logo)}</div>
         </div>
       </div>
-
+      <SobreNos />
       {/* Footer com as informações da empresa */}
       <Footer />
     </div>

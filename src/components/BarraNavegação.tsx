@@ -6,6 +6,13 @@ interface NavigationBarProps {
 }
 
 function NavigationBar({ logoDaEmpresa, logado }: NavigationBarProps) {
+  const handleScroll = () => {
+    const element = document.getElementById('sobre-nos');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div className="container-fluid">
@@ -35,7 +42,11 @@ function NavigationBar({ logoDaEmpresa, logado }: NavigationBarProps) {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             {GenerateButton("Início", true, "/")}
-            {GenerateButton("Sobre nós", false, "/sobre")}
+            <li className="nav-item fade-in-up">
+              <button className="nav-link" onClick={handleScroll}>
+                Sobre nós
+              </button>
+            </li>
             {GenerateButton("Parcerias", false)}
           </ul>
 

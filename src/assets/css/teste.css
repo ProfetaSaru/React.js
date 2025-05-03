@@ -47,3 +47,7 @@
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
 }
+
+#sobre-nos {
+  scroll-margin-top: 90px; /* Set this to your navbar's height */
+}
