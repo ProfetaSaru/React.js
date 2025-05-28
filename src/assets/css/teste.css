@@ -67,3 +67,164 @@
 #parcerias {
   background-color: white;
 }
+.navbar-nav {
+  align-items: center;
+  text-align: center;
+  margin-right: 150px;
+}
+
+.nav-item {
+  margin-right: 60px;
+}
+
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #014f9e; /* cor da animação (verde, como no botão) */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #014f9e; /* muda a cor do texto ao passar o mouse */
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Animação fade-in com leve subida */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-dark-blue {
+  color: #003366 !important; /* azul escuro */
+  border-color: #003366 !important;
+}
+
+.text-dark-blue:hover {
+  background-color: #003366 !important;
+  color: white !important;
+}
+
+.box-esquerda,
+.box-direita {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+}
+
+.box-esquerda {
+  justify-content: center;
+}
+
+.box-direita {
+  justify-content: center;
+}
+
+.btn-outline-primary.text-dark-blue {
+  border-color: #003366;
+  color: #003366;
+}
+
+.btn-outline-primary.text-dark-blue:hover {
+  background-color: #003366;
+  color: white;
+}
+
+.box-esquerda,
+.box-direita {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  max-width: 400px;
+}
+
+
+/* Classe para aplicar animação */
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+#sobre-nos {
+  scroll-margin-top: 90px; /* Set this to your navbar's height */
+}
+
+#parcerias {
+  scroll-margin-top: 90px; /* Alinhar corretamente após rolagem */
+}
+
+#parcerias img {
+  transition: transform 0.3s ease;
+}
+
+#parcerias img:hover {
+  transform: scale(1.05);
+}
+/* estilo genérico do cartão */
+.debt-card {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+.debt-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* estilos por empresa (bordas coloridas) */
+.debt-card--netflix {
+  border-top: 4px solid #E50914;
+}
+.debt-card--amazon-prime {
+  border-top: 4px solid #00AEDF;
+}
+.debt-card--disney {
+  border-top: 4px solid #113CCF;
+}
+.debt-card--spotify {
+  border-top: 4px solid #1DB954;
+}
+.debt-card--nubank {
+  border-top: 4px solid #8A05BE;
+}
+
+/* Se precisar de outras empresas, basta criar .debt-card--outro-slug */

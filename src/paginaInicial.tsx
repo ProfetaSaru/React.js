@@ -1,8 +1,8 @@
 import React from "react";
-import NavigationBar from "./components/BarraNavegação.tsx";
-import Footer from "./components/Footer.tsx";
-import SobreNos from "./components/SobreNos.tsx";
-import Parcerias from "./components/Parcerias.tsx";
+import NavigationBar from "./components/BarraNavegação";
+import Footer from "./components/Footer";
+import SobreNos from "./components/SobreNos";
+import Parcerias from "./components/Parcerias";
 
 function PaginaInicial() {
   const logo = "./icons/LogoDesenrola.ai.png";
@@ -11,13 +11,8 @@ function PaginaInicial() {
     <div className="text-center">
       <NavigationBar logoDaEmpresa={logo} logado={false} />
 
-      <section
-        style={{
-          backgroundColor: "#ffffff",
-          paddingBottom: "150px",
-        }}
-      >
-        <div className="container">
+      <section style={{ backgroundColor: "#ffffff", paddingBottom: "150px" }}>
+        <div className="container" style={{ padding: 0 }}>
           <div
             style={{
               display: "flex",
@@ -25,16 +20,17 @@ function PaginaInicial() {
               alignItems: "flex-start",
               gap: "50px",
               padding: "20px 0 0 0",
-              flexWrap: "wrap",
+              flexWrap: "nowrap",
             }}
           >
             {/* Card Consulta CPF */}
             <div
               style={{
-                flex: "1 1 400px",
-                maxWidth: "600px",
+                flex: "0 0 45%",
+                minWidth: "300px",
                 textAlign: "center",
                 padding: "40px",
+                marginLeft: "2rem",
                 border: "2px solid #ccc",
                 borderRadius: "15px",
                 boxShadow: "0 4px 15px #007BFF",
@@ -75,16 +71,14 @@ function PaginaInicial() {
               </button>
             </div>
 
+            {/* Imagem ao lado do card */}
             <div
               style={{
+                flex: "0 0 45%",
+                minWidth: "300px",
                 display: "flex",
-                alignItems: "center",
                 justifyContent: "center",
-                maxWidth: "700px",
-                width: "100%",
-                margin: "auto",
-                border: "none",
-                boxShadow: "none",
+                alignItems: "flex-start",
               }}
             >
               <img
@@ -93,23 +87,16 @@ function PaginaInicial() {
                 style={{
                   maxWidth: "100%",
                   height: "auto",
-                  width: "100%",
-                  maxHeight: "400px",
                   objectFit: "contain",
-                  border: "none",
-                  boxShadow: "none",
-                  outline: "none",
-                  display: "block",
+                  borderRadius: "8px",
                 }}
               />
             </div>
           </div>
         </div>
       </section>
-      <div style={{ marginTop: 0 }}>
-        <SobreNos />
-      </div>
 
+      <SobreNos />
       <Parcerias />
       <Footer />
     </div>

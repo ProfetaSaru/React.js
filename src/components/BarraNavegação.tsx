@@ -1,3 +1,4 @@
+// components/BarraNavegação.tsx
 import GenerateButton from "./GeradorBotão";
 
 interface NavigationBarProps {
@@ -11,22 +12,34 @@ function NavigationBar({ logoDaEmpresa, logado }: NavigationBarProps) {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  }
+  };
+
+  const handleScrollParcerias = () => {
+    const element = document.getElementById('parcerias');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+    <nav
+      className="navbar navbar-expand-lg sticky-top"
+      style={{ backgroundColor: 'rgb(230, 242, 255)' }}
+    >
+      <div className="container">
+        {/* LOGO */}
+        <a className="navbar-brand d-flex align-items-center" href="#">
           <img
             src={logoDaEmpresa}
             alt="logo"
             width="30"
             height="30"
-            className="d-inline-block align-text-top"
+            className="d-inline-block align-text-top me-2"
           />
           Desenrola.Aí
         </a>
 
+        {/* Botão mobile */}
         <button
           className="navbar-toggler"
           type="button"
@@ -39,44 +52,55 @@ function NavigationBar({ logoDaEmpresa, logado }: NavigationBarProps) {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+        {/* Links centrais */}
+        <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul className="navbar-nav gap-2">
             {GenerateButton("Início", true, "/")}
             <li className="nav-item fade-in-up">
-              <button className="nav-link" onClick={handleScroll}>
+              <button className="nav-link bg-transparent border-0" onClick={handleScroll}>
                 Sobre nós
               </button>
             </li>
             <li className="nav-item fade-in-up">
-  <button className="nav-link" onClick={() => {
-    const element = document.getElementById('parcerias');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }}>
-    Parcerias
-  </button>
-</li>
-          </ul>
-
-          {logado ? (
-            <button className="btn btn-outline-success d-flex ms-auto">
-              Sua Conta
-            </button>
-          ) : (
-            <form className="d-flex ms-auto" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="XXX.XXX.XXX-XX"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Consultar CPF
+              <button className="nav-link bg-transparent border-0" onClick={handleScrollParcerias}>
+                Parcerias
               </button>
-            </form>
-          )}
+            </li>
+          </ul>
         </div>
+
+        {/* Botão "Sua Conta" em azul escuro */}
+        {logado ? (
+          <button
+            className="btn btn-outline-primary ms-auto"
+            style={{
+              color: "#0a2a66",
+              borderColor: "#0a2a66",
+            }}
+            onMouseOver={e => {
+              (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#0a2a66";
+              (e.currentTarget as HTMLButtonElement).style.color = "#ffffff";
+            }}
+            onMouseOut={e => {
+              (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+              (e.currentTarget as HTMLButtonElement).style.color = "#0a2a66";
+            }}
+          >
+            Sua Conta
+          </button>
+        ) : (
+          <form className="d-flex ms-auto" role="search">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="XXX.XXX.XXX-XX"
+              aria-label="Search"
+            />
+            <button className="btn btn-outline-primary text-dark-blue" type="submit">
+              Consultar CPF
+            </button>
+          </form>
+        )}
       </div>
     </nav>
   );

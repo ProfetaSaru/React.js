@@ -1,8 +1,7 @@
+// GeradorDividas.tsx
+import React from "react";
 import DebtCard from "./CartãoDivida";
 
-// Interface para definir a estrutura dos dados de dívida
-// Mudar valores para os definidos no Banco de Dados
-// Mudar também CartãoDivida.tsx
 interface Divida {
   id?: number;
   empresa: string;
@@ -12,23 +11,60 @@ interface Divida {
   status?: string;
 }
 
-/**
- * Gera cartões de dívida a partir de um array de dados de dívidas
- * @param dividas - Array de objetos contendo dados das dívidas
- * @returns Array de componentes DebtCard
- */
+function getBgColor(empresa: string) {
+  const name = empresa.toLowerCase();
+
+  if (name.includes("netflix")) return "#E50914";
+  if (name.includes("nu")) return "#9D00FF";            // nubank ou nu
+  if (name.includes("disney")) return "#006e99";
+  if (name.includes("prime")) return "#2271f0";         // agora qualquer “prime…” vai bater
+  if (name.includes("spotify")) return "#1ED760";
+
+  return "#e6f2ff"; // fallback
+}
+
 function GeradorDividas(dividas: Divida[]) {
-  return dividas.map((divida, index) => (
-    <div key={index}>
-      {DebtCard(
-        divida.logo,
-        divida.valor,
-        divida.empresa,
-        divida.data_vencimento,
-        divida.status
-      )}
+  const containerStyle: React.CSSProperties = {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "1.5rem",
+    justifyContent: "center",
+    padding: "1rem",
+  };
+
+  const baseWrapperStyle: React.CSSProperties = {
+    border: "1px solid #ccc",
+    borderRadius: "12px",
+    padding: "1rem",
+    width: "300px",
+    transition: "transform 0.2s",
+  };
+
+  return (
+    <div style={containerStyle}>
+      {dividas.map((divida, idx) => {
+        const bgColor = getBgColor(divida.empresa);
+        return (
+          <div
+            key={idx}
+            style={{
+              ...baseWrapperStyle,
+              backgroundColor: bgColor,
+              boxShadow: `0 2px 8px ${bgColor}80`,
+            }}
+          >
+            {DebtCard(
+              divida.logo,
+              divida.valor,
+              divida.empresa,
+              divida.data_vencimento,
+              divida.status
+            )}
+          </div>
+        );
+      })}
     </div>
-  ));
+  );
 }
 
 export default GeradorDividas;

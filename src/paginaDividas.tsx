@@ -12,7 +12,7 @@ interface Divida {
 }
 
 function PaginaDividas() {
-  const Logo = "./icons/3135715.png";
+  const Logo = "./icons/LogoDesenrola.ai.png";
   const minhasDividas = [
     {
       id: 1,
@@ -48,7 +48,7 @@ function PaginaDividas() {
     },
     {
       id: 5,
-      empresa: "Nubank",
+      empresa: "Nu",
       logo: "https://logodownload.org/wp-content/uploads/2019/08/nubank-logo-1.png",
       valor: 327.50,
       data_vencimento: "18/04/2025",
@@ -58,7 +58,7 @@ function PaginaDividas() {
 
   return (
     <div>
-      {NavigationBar(Logo, true)}
+<NavigationBar logoDaEmpresa={Logo} logado={false} />
       <div className="exemplo-dividas">
       <h2>Minhas Dívidas</h2>
       <div className="dividas-container">
