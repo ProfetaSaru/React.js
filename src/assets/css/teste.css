@@ -1,0 +1,69 @@
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #4CAF50; /* cor da animação (verde, como no botão) */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #4CAF50; /* muda a cor do texto ao passar o mouse */
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Animação fade-in com leve subida */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe para aplicar animação */
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+#sobre-nos {
+  scroll-margin-top: 90px; /* Set this to your navbar's height */
+}
+
+#parcerias {
+  scroll-margin-top: 90px; /* Alinhar corretamente após rolagem */
+}
+
+#parcerias img {
+  transition: transform 0.3s ease;
+}
+
+#parcerias img:hover {
+  transform: scale(1.05);
+}
+
+#parcerias {
+  background-color: white;
+}
