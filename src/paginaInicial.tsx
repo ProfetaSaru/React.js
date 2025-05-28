@@ -5,17 +5,16 @@ import SobreNos from "./components/SobreNos.tsx";
 import Parcerias from "./components/Parcerias.tsx";
 
 function PaginaInicial() {
-  const logo = "./icons/LogoDesenrola.ai.jpg";
+  const logo = "./icons/LogoDesenrola.ai.png";
 
   return (
     <div className="text-center">
       <NavigationBar logoDaEmpresa={logo} logado={false} />
 
-      {/* Seção com fundo e padding estendido */}
       <section
         style={{
           backgroundColor: "#ffffff",
-          paddingBottom: "150px", // Espaço extra inferior
+          paddingBottom: "150px",
         }}
       >
         <div className="container">
@@ -46,9 +45,7 @@ function PaginaInicial() {
                 Consultar CPF?
               </h3>
               <p style={{ fontSize: "1.4rem", marginBottom: "30px" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-                nesciunt exercitationem dolores odio illo veritatis ut vitae
-                necessitatibus, asperiores soluta.
+                Insira o CPF para consultar, em instantes, seu status cadastral, score de crédito e eventuais pendências tudo de forma rápida, segura e 100 % confidencial.
               </p>
               <input
                 type="text"
@@ -78,7 +75,6 @@ function PaginaInicial() {
               </button>
             </div>
 
-            {/* Logo aumentado, sem borda nem sombra */}
             <div
               style={{
                 display: "flex",
@@ -110,8 +106,6 @@ function PaginaInicial() {
           </div>
         </div>
       </section>
-
-      {/* Seções adicionais */}
       <div style={{ marginTop: 0 }}>
         <SobreNos />
       </div>
