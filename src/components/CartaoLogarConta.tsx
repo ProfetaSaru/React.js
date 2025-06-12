@@ -121,9 +121,10 @@ function LogarConta() {
             onChange={handlePasswordChange}
             autoComplete="new-password"
           />
-          <button className="btn btn-primary w-100" type="submit">
+          <a href="/paginaDividas"><button className="btn btn-primary w-100" type="submit">
             Entrar
           </button>
+          </a>
         </form>
       </div>
     </div>

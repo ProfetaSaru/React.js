@@ -1,11 +1,13 @@
+// src/PaginaInicial.tsx
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import NavigationBar from "./components/BarraNavegação";
-import Footer        from "./components/Footer";
-import SobreNos      from "./components/SobreNos";
-import Parcerias     from "./components/Parcerias";
+import Footer from "./components/Footer";
+import SobreNos from "./components/SobreNos";
+import Parcerias from "./components/Parcerias";
 
-function PaginaInicial() {
+export default function PaginaInicial() {
   const logo = "./icons/LogoDesenrola.ai.png";
   const navigate = useNavigate();
 
@@ -17,26 +19,26 @@ function PaginaInicial() {
         <div className="container" style={{ padding: 0 }}>
           <div
             style={{
-              display:       "flex",
-              justifyContent:"space-between",
-              alignItems:    "flex-start",
-              gap:           "50px",
-              padding:       "20px 0 0 0",
-              flexWrap:      "nowrap",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              gap: "50px",
+              padding: "20px 0 0 0",
+              flexWrap: "nowrap",
             }}
           >
             {/* Card Consulta CPF */}
             <div
               style={{
-                flex:           "0 0 45%",
-                minWidth:       "300px",
-                textAlign:      "center",
-                padding:        "40px",
-                marginLeft:     "2rem",
-                border:         "2px solid #ccc",
-                borderRadius:   "15px",
-                boxShadow:      "0 4px 15px #007BFF",
-                backgroundColor:"#e6f2ff",
+                flex: "0 0 45%",
+                minWidth: "300px",
+                textAlign: "center",
+                padding: "40px",
+                marginLeft: "2rem",
+                border: "2px solid #ccc",
+                borderRadius: "15px",
+                boxShadow: "0 4px 15px #007BFF",
+                backgroundColor: "#e6f2ff",
               }}
             >
               <h3 style={{ fontSize: "2rem", marginBottom: "20px" }}>
@@ -44,18 +46,18 @@ function PaginaInicial() {
               </h3>
               <p style={{ fontSize: "1.4rem", marginBottom: "30px" }}>
                 Insira o CPF para consultar, em instantes, seu status cadastral,
-                score de crédito e eventuais pendências tudo de forma rápida,
+                score de crédito e eventuais pendências — tudo de forma rápida,
                 segura e 100% confidencial.
               </p>
               <input
                 type="text"
                 placeholder="XXX.XXX.XXX-XX"
                 style={{
-                  padding:      "10px 20px",
-                  fontSize:     "1.2rem",
+                  padding: "10px 20px",
+                  fontSize: "1.2rem",
                   borderRadius: "8px",
-                  border:       "1px solid #ccc",
-                  width:        "80%",
+                  border: "1px solid #ccc",
+                  width: "80%",
                   marginBottom: "20px",
                 }}
               />
@@ -63,13 +65,13 @@ function PaginaInicial() {
               <button
                 onClick={() => navigate("/login")}
                 style={{
-                  padding:      "10px 30px",
-                  fontSize:     "1.2rem",
+                  padding: "10px 30px",
+                  fontSize: "1.2rem",
                   borderRadius: "8px",
-                  backgroundColor:"#007BFF",
-                  color:        "white",
-                  border:       "none",
-                  cursor:       "pointer",
+                  backgroundColor: "#007BFF",
+                  color: "white",
+                  border: "none",
+                  cursor: "pointer",
                 }}
               >
                 Consultar CPF
@@ -79,21 +81,21 @@ function PaginaInicial() {
             {/* Imagem ao lado do card */}
             <div
               style={{
-                flex:           "0 0 45%",
-                minWidth:       "300px",
-                display:        "flex",
+                flex: "0 0 45%",
+                minWidth: "300px",
+                display: "flex",
                 justifyContent: "center",
-                alignItems:     "flex-start",
+                alignItems: "flex-start",
               }}
             >
               <img
                 src={logo}
                 alt="Logo Desenrola.ai"
                 style={{
-                  maxWidth:    "100%",
-                  height:      "auto",
-                  objectFit:   "contain",
-                  borderRadius:"8px",
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                  borderRadius: "8px",
                 }}
               />
             </div>
@@ -107,5 +109,3 @@ function PaginaInicial() {
     </div>
   );
 }
-
-export default PaginaInicial;
