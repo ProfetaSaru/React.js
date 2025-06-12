@@ -65,6 +65,29 @@ function PaginaDividas() {
         {GeradorDividas(minhasDividas)}
       </div>
     </div>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      marginTop: '64px'
+    }}>
+      
+    <button className="btn-continuar" type="button" style={{
+      padding: '12px 24px',
+      backgroundColor: '#007bff',
+      color: 'white',
+      border: 'none',
+      borderRadius: '8px',
+      fontSize: '16px',
+      fontWeight: 'bold',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s ease'
+    }}
+    onMouseOver={e => (e.currentTarget.style.backgroundColor = '#0056b3')}
+    onMouseOut={e => (e.currentTarget.style.backgroundColor = '#007bff')}>
+      Continuar
+    </button>
+    </div>
+    <div style={{ height: '80px' }} />
     </div>
   )
 
