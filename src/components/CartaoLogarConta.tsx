@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 function LogarConta() {
   const Logo = "./icons/3135715.png";
   const HNW = 52;
+
+  const navigate = useNavigate();
 
   const [isPasswordView, setIsPasswordView] = useState(false);
   const [cpfValue, setCpfValue] = useState("");
@@ -54,6 +58,7 @@ function LogarConta() {
   function handlePasswordSubmit(e: React.FormEvent) {
     e.preventDefault();
     console.log("Login attempt with CPF:", cpfValue, "and password:", passwordValue);
+    navigate('/dividas');
   }
 
   function goBackToCPF() {
@@ -121,10 +126,9 @@ function LogarConta() {
             onChange={handlePasswordChange}
             autoComplete="new-password"
           />
-          <a href="/paginaDividas"><button className="btn btn-primary w-100" type="submit">
+          <button className="btn btn-primary w-100" type="submit">
             Entrar
           </button>
-          </a>
         </form>
       </div>
     </div>
