@@ -71,7 +71,7 @@ function PaginaDividas() {
       marginTop: '64px'
     }}>
       
-    <button className="btn-continuar" type="button" style={{
+    <a href='/detalhes-divida' className="btn-continuar"style={{
       padding: '12px 24px',
       backgroundColor: '#007bff',
       color: 'white',
@@ -85,7 +85,7 @@ function PaginaDividas() {
     onMouseOver={e => (e.currentTarget.style.backgroundColor = '#0056b3')}
     onMouseOut={e => (e.currentTarget.style.backgroundColor = '#007bff')}>
       Continuar
-    </button>
+    </a>
     </div>
     <div style={{ height: '80px' }} />
     </div>
