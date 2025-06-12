@@ -1,11 +1,15 @@
+// src/PaginaInicial.tsx
+
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import NavigationBar from "./components/BarraNavegação";
 import Footer from "./components/Footer";
 import SobreNos from "./components/SobreNos";
 import Parcerias from "./components/Parcerias";
 
-function PaginaInicial() {
+export default function PaginaInicial() {
   const logo = "./icons/LogoDesenrola.ai.png";
+  const navigate = useNavigate();
 
   return (
     <div className="text-center">
@@ -41,7 +45,9 @@ function PaginaInicial() {
                 Consultar CPF?
               </h3>
               <p style={{ fontSize: "1.4rem", marginBottom: "30px" }}>
-                Insira o CPF para consultar, em instantes, seu status cadastral, score de crédito e eventuais pendências tudo de forma rápida, segura e 100 % confidencial.
+                Insira o CPF para consultar, em instantes, seu status cadastral,
+                score de crédito e eventuais pendências — tudo de forma rápida,
+                segura e 100% confidencial.
               </p>
               <input
                 type="text"
@@ -57,6 +63,7 @@ function PaginaInicial() {
               />
               <br />
               <button
+                onClick={() => navigate("/login")}
                 style={{
                   padding: "10px 30px",
                   fontSize: "1.2rem",
@@ -102,5 +109,3 @@ function PaginaInicial() {
     </div>
   );
 }
-
-export default PaginaInicial;
